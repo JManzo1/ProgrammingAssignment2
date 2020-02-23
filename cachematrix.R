@@ -1,8 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## makeCacheMatrix and cacheSolve are used on cunjunction to create a matrix
+## where the inverse of the matrix can be stored and the  inverse of the does
+## not need to be calculated every time it is needed
 
-## Write a short comment describing this function
-## makeCacheMatrix creates a matrix with a chached inverse matrix
+## makeCacheMatrix creates a matrix with a cached inverse matrix
 makeCacheMatrix <- function(x = matrix()) {
 
     # set inverse matrix to NULL when creating
@@ -19,7 +19,7 @@ makeCacheMatrix <- function(x = matrix()) {
     # get the matrix
     get <- function() x
     
-    # set the matrix insever
+    # set the matrix inverse
     setinv <- function(m_inv) x_inv <<- m_inv
     
     # get the matrix inverse
@@ -30,12 +30,9 @@ makeCacheMatrix <- function(x = matrix()) {
     
 }
 
-
-## Write a short comment describing this function
 ## cacheSolve computes the inverse of a square, invertible matrix
+## and sets it so that it can be reused without recalculating it
 cacheSolve <- function(x, ...) {
-    
-    ## Return a matrix that is the inverse of 'x'
     
     # get the store inverse
     x_inv <- x$getinv()
